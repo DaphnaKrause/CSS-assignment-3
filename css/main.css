@@ -8,13 +8,13 @@ html {
     box-sizing: inherit; /* keep */
 }
 body {
-    font-family: sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     background: #5598b2; /* keep */
     color: #333; /* keep */
     margin: 0; /* keep */
 }
 h1, h2 {
-    font-family: serif;
+    font-family: "Amiri", Garamond, serif;
 }
 #tagline {
     font-style: italic;
@@ -38,10 +38,15 @@ img {
     margin: auto; /* keep */
     display: grid; /* keep */
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas:
-        "header arial georgia pairing bobwhite-quail"
-        "readability line-length helvetica typeface footer";
+        "header header header header header"
+        "pairing pairing pairing arial georgia"
+        "bobwhite-quail  bobwhite-quail readability readability  readability"
+        "bobwhite-quail  bobwhite-quail line-length line-length  line-length"
+        "typeface typeface typeface helvetica helvetica"
+        "typeface typeface typeface .... ...."
+        "footer footer footer footer footer";
 }
 
 /* all grid items -
@@ -53,43 +58,86 @@ img {
 header {
     grid-area: header; /* keep */
     background: #fff; /* keep */
+    text-align: center;
+    font-size: 200%;
+    padding-bottom: 2em;
+    line-height: .7;
 }
 #arial {
     grid-area: arial; /* keep */
     background: #a8e8ff; /* keep */
+    padding-top: 4em;
+    padding-right: 1em;
+    padding-bottom: 1em;
 }
 #georgia {
     grid-area: georgia; /* keep */
     background: #a8e8ff; /* keep */
+    padding-top: 4em;
+    padding-right: 1em;
+    padding-bottom: 1em;
 }
 #pairing {
     grid-area: pairing; /* keep */
     background: #a8e8ff; /* keep */
-}
+    padding-top: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin: 0;
+    font-size: 150%;
+  }
 #bobwhite-quail {
     grid-area: bobwhite-quail; /* keep */
     background: #d2f4ff; /* keep */
+    padding-top: 3em;
+    padding-left: 3em;
+    padding-bottom: 2em;
 }
 #readability {
     grid-area: readability; /* keep */
     background: #d2f4ff; /* keep */
+    padding-top: 1.5em;
+    padding-left: 2em;
+    padding-right: 3em;
+    font-size: 110%;
+    line-height: 1.5
 }
 #line-length {
     grid-area: line-length; /* keep */
     background: #d2f4ff; /* keep */
+    padding-left: 1.5em;
+    padding-right: 3em;
+    font-size: 110%;
+    line-height: 1.5;
 }
 #helvetica {
     grid-area: helvetica; /* keep */
     background: #fff; /* keep */
+    margin-top: 4em;
+    margin-left: 2em;
+    margin-bottom: 6em;
+    margin-right: 1em;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-bottom: 2em;
+    padding-right: 2em;
+
+
 }
 #typeface {
     grid-area: typeface; /* keep */
     color: #d2f4ff; /* keep */
     background: #5598b2; /* keep */
+    font-size: 120%;
+    text-shadow: .1em .1em #001; /* CHANGE */
+    padding-top: 2em;
+    padding-left: 2em;
+
 }
 footer {
     grid-area: footer; /* keep */
     background: #b2988a; /* keep */
+    text-align: center;
 }
 
 /* end of all 10 grid items */
@@ -98,6 +146,7 @@ footer {
 /* pseudo classes */
 a {
     color: #7c6a60; /* keep */
+    text-shadow: none;
 }
 a:hover {
     color: #f4cdb7; /* keep */
@@ -105,3 +154,88 @@ a:hover {
 }
 
 /* media queries below - only 1 is needed */
+@media screen and (max-width:375px){
+  #container {
+      display: grid; /* keep */
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(9, auto);
+      grid-template-areas:
+          "header header"
+          "arial georgia"
+          "pairing pairing"
+          "bobwhite-quail  bobwhite-quail"
+          "readability readability"
+          "line-length line-length"
+          "helvetica helvetica"
+          "typeface typeface"
+          "footer footer";
+    }
+    header{
+        font-size: 150%;
+        line-height: 1;
+        padding:1em 1em 1em 1em;
+        /* how to get rid of the Typography Photo*/
+    }
+    header img{
+      display: none;
+    }
+    #arial {
+        padding-top: 1em;
+        padding-left: 1em;
+        padding-right: .5em;
+        padding-bottom: 1em;
+    }
+    #georgia {
+      padding-top: 1em;
+      padding-left: .5em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+    }
+    #pairing {
+        font-size: 110%;
+        padding-top: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 1em;
+      }
+    #bobwhite-quail {
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 0em;
+    }
+    #readability {
+      font-size: 90%;
+      padding-top: 0em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+    }
+    #line-length {
+      font-size: 90%;
+      padding-top: 0em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+    }
+    #helvetica {
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 0em;
+      margin-right: 0em;
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-bottom: 1em;
+      padding-right: 1em;
+    }
+    #typeface {
+        font-size: 100%;
+        padding-top: 1em;
+        padding-left: 1em;
+        padding-bottom: 1em;
+        padding-right: 1em;
+    }
+    footer {
+        padding-top: 1em;
+    }
+}
